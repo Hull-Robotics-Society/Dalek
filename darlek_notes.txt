@@ -1,0 +1,31 @@
+Dalek Notes:
+
+Todo for the dalek:
+1. Weight the dalek.
+2. Measure full farm.
+3. M6 x 60 bolts 
+
+darlek base frame measurements:
+
+	outer support beam widths: 50.7mm x 50.7mm
+	outer support beam lengths: 800mm
+	outer frame lwngth and width: 800mm x 800mm 
+
+	inner support beams widths: 13mm x 13mm
+	inner support beam length: 800mm
+ 
+
+wheel motor specs:
+
+	INVACARE (UK) LTD	BRIDGEND MID GLAMORGAN
+
+	REF:451-25-025-G30-35BW		6106137
+	serial NO:HA5066 / 06495	A 4.85
+	Volts: 24 MTR 12 BRK	HzDC	PH
+	Rpm: 115		O/P 2.71 Nm
+	Rtg CONT	Input F		IP 44	Date TA
+	customer REF: 1416111
+
+Motors: https://uk.rs-online.com/web/p/dc-motors/1816492
+https://uk.rs-online.com/web/p/motor-controllers/1798511
+https://uk.rs-online.com/web/c/cables-wires/wire-to-board-cables-ribbon-cable/wire-to-board-cables/?pn=1&rpp=100
