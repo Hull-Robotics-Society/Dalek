@@ -5,7 +5,7 @@ Todo for the dalek:
 2. Measure full farm.
 3. M6 x 60 bolts 
 
-darlek base frame measurements:
+dalek base frame measurements:
 
 	outer support beam widths: 50.7mm x 50.7mm
 	outer support beam lengths: 800mm
