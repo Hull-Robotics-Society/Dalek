@@ -1,0 +1,367 @@
+[
+    {
+        "id": "7912eb8967a67345",
+        "type": "tab",
+        "label": "Diagnostics",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a35107bfe49b2921",
+        "type": "mqtt out",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/pong",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc41be3ab55aa747",
+        "x": 530,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5b52f9cbf6ebe967",
+        "type": "function",
+        "z": "7912eb8967a67345",
+        "name": "function 2",
+        "func": "let inputValue = msg.payload;\n\nif (inputValue == \"Ping\") {\n    msg.payload = \"Pong\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "a35107bfe49b2921",
+                "037529fb7ae13c47"
+            ]
+        ]
+    },
+    {
+        "id": "89407793333d99c4",
+        "type": "mqtt in",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/ping",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fc41be3ab55aa747",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "5b52f9cbf6ebe967",
+                "7b10b86ac12c32b0"
+            ]
+        ]
+    },
+    {
+        "id": "7b10b86ac12c32b0",
+        "type": "debug",
+        "z": "7912eb8967a67345",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "037529fb7ae13c47",
+        "type": "debug",
+        "z": "7912eb8967a67345",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d4a07880c34a1f7f",
+        "type": "mqtt out",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/ping",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc41be3ab55aa747",
+        "x": 420,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f60edd2e466d6ea5",
+        "type": "inject",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Ping",
+        "payloadType": "str",
+        "x": 250,
+        "y": 480,
+        "wires": [
+            [
+                "d4a07880c34a1f7f"
+            ]
+        ]
+    },
+    {
+        "id": "a0b09a480766ea01",
+        "type": "mqtt out",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/pong",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc41be3ab55aa747",
+        "x": 430,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "b3de5cdc38bea242",
+        "type": "inject",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ACK",
+        "payloadType": "str",
+        "x": 250,
+        "y": 520,
+        "wires": [
+            [
+                "a0b09a480766ea01"
+            ]
+        ]
+    },
+    {
+        "id": "14f68a85e0e1457b",
+        "type": "mqtt out",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/ping",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc41be3ab55aa747",
+        "x": 420,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "63fe4fcdfb31a058",
+        "type": "inject",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ACK",
+        "payloadType": "str",
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "14f68a85e0e1457b"
+            ]
+        ]
+    },
+    {
+        "id": "71e3b0ef22cb3bf7",
+        "type": "mqtt in",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/ping",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "fc41be3ab55aa747",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 360,
+        "wires": [
+            [
+                "d764c17ce660e87c"
+            ]
+        ]
+    },
+    {
+        "id": "dd4dded98332b9a0",
+        "type": "mqtt in",
+        "z": "7912eb8967a67345",
+        "name": "",
+        "topic": "/diag/pong",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "fc41be3ab55aa747",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 420,
+        "wires": [
+            [
+                "db5204a178701ebb"
+            ]
+        ]
+    },
+    {
+        "id": "d764c17ce660e87c",
+        "type": "ui_text",
+        "z": "7912eb8967a67345",
+        "group": "d52cb70ecd2d0748",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Diag Ping:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 450,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "db5204a178701ebb",
+        "type": "ui_text",
+        "z": "7912eb8967a67345",
+        "group": "d52cb70ecd2d0748",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Diag Pong:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 450,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "fc41be3ab55aa747",
+        "type": "mqtt-broker",
+        "name": "Mobile-Link",
+        "broker": "192.168.0.102",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d52cb70ecd2d0748",
+        "type": "ui_group",
+        "name": "Diagnostics",
+        "tab": "8d5cabcad4f2e926",
+        "order": 1,
+        "disp": true,
+        "width": "16",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8d5cabcad4f2e926",
+        "type": "ui_tab",
+        "name": "Diagnostics",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
