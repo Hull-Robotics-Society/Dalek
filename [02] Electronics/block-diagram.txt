@@ -1,39 +1,37 @@
-+---------------------+
-| Operator / Pi4 |
-| (Touchscreen GUI) |
-| - MQTT broker |
-+----------+----------+
-|
-(Wi‑Fi / Ethernet)
-|
-+------------------------+------------------------+
-| Jetson Nano |
-| (Central brain: vision, audio, high-level) |
-+----+-----------------------------------+-------+
-| |
-Serial / UART | | I2C / SPI / UART
-(control commands)| |
-v v
-+-------+-------+ +---------+---------+
-| Arduino Mega | | Sensor & Motor |
-| (existing CU) | | Controller Hub |
-| - low-level | | (new: Teensy/STM)|
-+--+-----------+ +---+---------------+
-| | \
-| | \--- I2C / PWM (PCA9685)
-| TTL Serial / TTL UART SPI/UART \
-| | \
-+-------+------+ +---------+---------+ +-----------------
-| Motor Driver | <- motor PWM -> | Stepper Driver(s) | | Servo/LED/PWM |
-| (H-bridges, | | (TMC2209 / TB6600) | | driver chains |
-| motor-controllers)| +---------+---------+ | (PCA9685 x N) |
-+----------------+ | +-----------------
-|
-Steppers for
-plunger / rollerballs
-
-
-
+                              +---------------------+
+                              |  Operator / Pi4     |
+                              |  (Touchscreen GUI)  | 
+                              |  - MQTT broker      |
+                              +----------+----------+
+                                         |
+                                (Wi‑Fi / Ethernet)
+                                         |
+                +------------------------+------------------------+
+                |                   Jetson Nano                   |
+                |    (Central brain: vision, audio, high-level)   |
+                +----+-----------------------------------+--------+
+                     |                                   |
+       Serial / UART |                                   | I2C / SPI / UART
+   (control commands)|                                   |
+                     v                                   v
+             +-------+-------+                 +---------+---------+
+             | Arduino Mega   |                | Sensor & Motor    |
+             | (existing CU)  |                | Controller Hub    |
+             | - low-level    |                | (new: Teensy/STM) |
+             +--+-------------+                +---+---------------+
+                |                                  | \
+                |                                  | \--- I2C / PWM (PCA9685)
+                | TTL Serial / TTL UART            SPI/UART      \
+                |                                  |              \
+        +-------+------+                 +---------+---------+     +-----------------
+        | Motor Driver | <- motor PWM -> | Stepper Driver(s) |     | Servo/LED/PWM  |
+        | (H-bridges,  |                 | (TMC2209 / TB6600)|     | driver chains  |
+        | motor-       |                 +---------+---------+     | (PCA9685 x N)  |
+        |  controllers)|                           |               +-----------------
+        +--------------+                           |                 
+                                                   |
+                                             Steppers for
+                                       plunger / rollerballs
 
 Additional subsystems connected to Sensor & Motor Controller Hub:
 - 13x Ultrasonic sensors (grouped into 3 sensor hubs) -> hubs read sensors & publish via serial/CAN to Jetson
