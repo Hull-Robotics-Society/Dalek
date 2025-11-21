@@ -4,6 +4,7 @@ Todo for the dalek:
 1. Weight the dalek.
 2. Measure full farm.
 3. M6 x 60 bolts 
+4. Stablise
 
 dalek base frame measurements:
 
